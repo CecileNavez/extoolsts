@@ -87,9 +87,4 @@ public class Instructor {
 			bw.close();
 		}
 	
-public String toString(){
-		
-		return firstName + " " + lastName + " : age is " + age + ", started at " 
-		+ startingAge + " years old with first salary : " + startingSalary + " EUR" ;
-	}
 }

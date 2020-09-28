@@ -98,7 +98,7 @@ public class Course{
 		bw.write("There are (is) " + instructors.size() + " instructor(s) for this course \n");
 		bw.write("The instructors are :\n");
 		for (Instructor i: instructors) {
-			bw.write(i.toString()+"\n");
+			bw.write(i.getFirstName() + " " + i.getLastName() +"\n");
 		}
 		
 	   bw.close();
