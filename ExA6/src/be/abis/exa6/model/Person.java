@@ -87,7 +87,7 @@ public class Person {
 		int age = calculateAge();
 		
 		return "Person " + personNumber + " : " + firstName + " " 
-			+ lastName + " (" + age + " years old) works for ";
+			+ lastName + " (" + age + " years old) ";
 	}
 	
 	public int calculateAge() {
