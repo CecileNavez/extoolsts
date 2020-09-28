@@ -6,5 +6,5 @@ The total price of the course is 3676.5 EUR.
 The price is EXPENSIVE
 There are (is) 2 instructor(s) for this course 
 The instructors are :
-Cecile Navez
-Philippe Dupont
+Cecile Navez : age is 46, started at 27 years old with first salary : 3000.0 EUR
+Philippe Dupont : age is 50, started at 20 years old with first salary : 1500.0 EUR

@@ -78,12 +78,18 @@ public class Instructor {
 			bw.write("Salary of " + firstName + " at " + startingAge + " is " + startingSalary + "\n");
 			
 			for(int i=5; i<=carrierDuration; i=i+5) {
-				age = startingAge + i ;
+				int salaryAge = startingAge + i ;
 				salary = salary * 1.03;
-				bw.write("Salary of " + firstName + " at " + age + " is " + salary + "\n");
+				bw.write("Salary of " + firstName + " at " + salaryAge + " is " + salary + "\n");
 			}
 			bw.write("Maximum salary reached");
 
 			bw.close();
 		}
+	
+public String toString(){
+		
+		return firstName + " " + lastName + " : age is " + age + ", started at " 
+		+ startingAge + " years old with first salary : " + startingSalary + " EUR" ;
+	}
 }
