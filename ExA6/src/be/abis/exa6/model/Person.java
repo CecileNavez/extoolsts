@@ -11,6 +11,14 @@ public class Person {
 	private LocalDate birthDate;
 	private Company company;
 	
+	public Person(int personNumber, String firstName, String lastName, LocalDate birthDate) {
+		super();
+		this.personNumber = personNumber;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthDate = birthDate;
+	}
+	
 	public Person(int personNumber, String firstName, String lastName, LocalDate birthDate, Company company) {
 		super();
 		this.personNumber = personNumber;
@@ -86,8 +94,16 @@ public class Person {
 		
 		int age = calculateAge();
 		
-		return "Person " + personNumber + " : " + firstName + " " 
-			+ lastName + " (" + age + " years old) ";
+		String text = "Person " + this.personNumber + " : " + this.firstName + " " + this.lastName + " (" + age + " years old)";
+		if (this.company != null) {
+			text += " works for " + this.company.getName() + this.company.getAddress().getTown() + ".";
+	}	else {
+		
+		text += "is unemployed for the moment";
+	}
+		
+		return text;
+		
 	}
 	
 	public int calculateAge() {
