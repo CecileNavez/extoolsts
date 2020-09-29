@@ -1,4 +1,4 @@
-package be.abis.exa6.model;
+package be.abis.exa8.model;
 
 import java.time.LocalDate;
 import java.time.Period;

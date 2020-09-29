@@ -1,4 +1,4 @@
-package be.abis.exa6.model;
+package be.abis.exa8.model;
 
 public class Company {
 	

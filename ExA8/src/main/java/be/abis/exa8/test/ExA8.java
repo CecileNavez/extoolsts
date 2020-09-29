@@ -1,4 +1,4 @@
-package be.abis.exa6.test;
+package be.abis.exa8.test;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -6,9 +6,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 
-import be.abis.exa6.model.Address;
-import be.abis.exa6.model.Company;
-import be.abis.exa6.model.Person;
+import be.abis.exa8.model.Address;
+import be.abis.exa8.model.Company;
+import be.abis.exa8.model.Person;
 
 public class ExA8 {
 
