@@ -63,33 +63,46 @@ public class Instructor {
 	}
 	
 	//methods
-	public void printSalaryHistory() throws IOException{
-		//The method will augment the salary with 3% every five years. After 35 years of seniority, the augmentation should stop
-			int carrierDuration = 65 - startingAge;
-			
-			if(carrierDuration >35) {
-				carrierDuration = 35;
-			}
-			
-			double salary = startingSalary;
-			
-			BufferedWriter bw = Files.newBufferedWriter(Paths.get("salaryhistory.txt"));
-			
-			bw.write("Salary of " + firstName + " at " + startingAge + " is " + startingSalary + "\n");
-			
-			for(int i=5; i<=carrierDuration; i=i+5) {
-				int salaryAge = startingAge + i ;
-				salary = salary * 1.03;
-				bw.write("Salary of " + firstName + " at " + salaryAge + " is " + salary + "\n");
-			}
-			bw.write("Maximum salary reached");
-
-			bw.close();
-		}
-	
-public String toString(){
+	public void printSalaryHistory() throws IOException {
 		
-		return firstName + " " + lastName + " : age is " + age + ", started at " 
-		+ startingAge + " years old with first salary : " + startingSalary + " EUR" ;
+		
+		BufferedWriter bw = Files.newBufferedWriter(Paths.get("salaryhistory.txt"));
+		this.doPrinting(bw);
+		bw.close();
+		System.out.println("salaryhistory.txt created");
+	
 	}
+
+	public void printSalaryHistory(String fileName) throws IOException{
+		 
+		 BufferedWriter bw = Files.newBufferedWriter(Paths.get(fileName));
+		 this.doPrinting(bw);
+		 bw.close();
+		 System.out.println(fileName + " was created");
+	}
+	
+	public void doPrinting(BufferedWriter bw) throws IOException {
+		int carrierDuration = 65 - startingAge;
+		
+		if(carrierDuration >35) {
+			carrierDuration = 35;
+		}
+		
+		double salary = startingSalary;
+		
+		bw.write("Salary of " + firstName + " at " + startingAge + " is " + startingSalary + "\n");
+		
+		for(int i=5; i<=carrierDuration; i=i+5) {
+			int salaryAge = startingAge + i ;
+			salary = salary * 1.03;
+			bw.write("Salary of " + firstName + " at " + salaryAge + " is " + salary + "\n");
+		}
+		bw.write("Maximum salary reached");
+	}
+		
+	public String toString(){
+			
+			return firstName + " " + lastName + " : age is " + age + ", started at " 
+			+ startingAge + " years old with first salary : " + startingSalary + " EUR" ;
+		}
 }
