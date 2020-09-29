@@ -89,17 +89,17 @@ public class Person {
 	}
 
 
-
+	@Override
 	public String toString(){
 		
-		int age = calculateAge();
+		int age = this.calculateAge();
 		
 		String text = "Person " + this.personNumber + " : " + this.firstName + " " + this.lastName + " (" + age + " years old)";
 		if (this.company != null) {
-			text += " works for " + this.company.getName() + this.company.getAddress().getTown() + ".";
+			text += " works for " + this.company.getName() + " in " + this.company.getAddress().getTown() + ".";
 	}	else {
 		
-		text += "is unemployed for the moment";
+		text += " is unemployed for the moment.";
 	}
 		
 		return text;

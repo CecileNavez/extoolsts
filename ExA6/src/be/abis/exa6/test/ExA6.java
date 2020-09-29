@@ -1,5 +1,9 @@
 package be.abis.exa6.test;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 
 import be.abis.exa6.model.Address;
@@ -16,11 +20,17 @@ public class ExA6 {
 	
 		Person p2 = new Person(2, "Phil", "Dupont", LocalDate.of(1970, 2, 16) );
 		
-		System.out.println(p1.toString() + " in " + a1.getTown());
+		System.out.println(p1.toString());
 		System.out.println(p2.toString());
 		
+		try (BufferedWriter bw = Files.newBufferedWriter(Paths.get("personinfo.txt"));) {
+			bw.write(p1.toString() + "\n");
+			bw.write(p2.toString() + "\n");
+			
+		} catch (IOException e){
+			System.out.println(e.getMessage());
+		}
 		
-
 	}
 
 }
